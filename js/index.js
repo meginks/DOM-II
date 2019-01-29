@@ -13,7 +13,7 @@ let logoHeading = document.querySelector(".logo-heading");
 let adventurePic = document.getElementById("adventure-img");
 let funPic = document.getElementById("fun-img");
 let navBar = document.querySelectorAll(".nav-link");
-let headings = document.querySelectorAll("home h2, h4");
+let headings = document.querySelectorAll("h2, h4");
 let headerBar = document.querySelector(".main-navigation");
 // click - changes first signup button to green on click
 
