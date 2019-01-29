@@ -107,7 +107,8 @@ paragraphs.forEach( element =>
 navBar.forEach( element => {
     element.addEventListener('click', event => {
     element.innerHTML = "GOAT";
-    event.stopPropagation()}); 
+    event.stopPropagation(); 
+    event.preventDefault();}); 
 }) 
 
 
