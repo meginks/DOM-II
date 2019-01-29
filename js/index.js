@@ -14,6 +14,7 @@ let adventurePic = document.getElementById("adventure-img");
 let funPic = document.getElementById("fun-img");
 let navBar = document.querySelectorAll(".nav-link");
 let headings = document.querySelectorAll("h2, h4");
+let headerBar = document.querySelector(".main-navigation");
 // click - changes first signup button to green on click
 
 signupBtn1.addEventListener('click', event => {signupBtn1.style.backgroundColor = "green";
@@ -23,7 +24,7 @@ signupBtn1.style.color = "white";});
 // doubleclick - creates alert popup on double click
 
 signupBtn3.addEventListener('dblclick', event => {
-    alert("Sign up for an island getaway now!");
+    alert("Sign up for a goat getaway now!");
     event.stopPropagation();
 });
 
@@ -62,7 +63,8 @@ logoHeading.innerHTML = "GOATS TAKE OVER"});
 // mouseleave -- going off the logo changes text back
 
 logoHeading.addEventListener('mouseleave', event => {
-    logoHeading.innerHTML = "Goats are here to stay. MWAHAHA"
+    logoHeading.innerHTML = "Goats are here to stay. MWAHAHA"; 
+    event.stopPropagation();
 });
 
 // mousemove -- goat picture pops up on fun bus image
@@ -97,19 +99,30 @@ funPic.addEventListener('contextmenu', event => {
 
 paragraphs.forEach( element => 
     element.addEventListener('mouseenter', event => {
-        element.innerHTML = "GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS BAAAAAA GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS KIDS AND GOATS AND KIDS AND GOATS AND KIDS AND BAAAAA GOATS. GOATS. GOT GOATS?"
-    })); 
+        element.innerHTML = "GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS BAAAAAA GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS KIDS AND GOATS AND KIDS AND GOATS AND KIDS AND BAAAAA GOATS. GOATS. GOT GOATS?";
+    })
+    ); 
 
 
 navBar.forEach( element => {
-    element.addEventListener('click', event => 
-    element.innerHTML = "GOAT"); 
+    element.addEventListener('click', event => {
+    element.innerHTML = "GOAT";
+    event.stopPropagation()}); 
 }) 
 
 
 headings.forEach( element => element.addEventListener('mouseover', event => {
-    element.innerHTML = "Welcome to the Goat Parade!";
-}
+    element.innerHTML = "GOATS ARE TAKING OVER!";
+    event.stopPropagation();
+})
+); 
 
-) 
-);
+headings.forEach( element => element.addEventListener('mouseleave', event => {
+    element.innerHTML = "GOATS ARE HERE TO STAY!"; 
+    event.stopPropagation();
+}));
+
+headerBar.addEventListener('click', event => {
+    event.target.style.backgroundColor = "lightgray";
+    event.stopPropagation();
+});
