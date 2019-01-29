@@ -7,12 +7,13 @@ let signupBtn2 = document.querySelectorAll(".btn")[1];
 let signupBtn3 = document.querySelectorAll(".btn")[2];
 let funBusPic = document.getElementById("fun-bus-img");
 let boatPic = document.getElementById("boat-photo");
-let headerBar = document.querySelectorAll(".main-navigation .container .nav-container");
+let paragraphs = document.querySelectorAll("p"); 
 let funInSun = document.getElementById("fun-in-sun");
 let logoHeading = document.querySelector(".logo-heading");
 let adventurePic = document.getElementById("adventure-img");
 let funPic = document.getElementById("fun-img");
-
+let navBar = document.querySelectorAll(".nav-link");
+let headings = document.querySelectorAll("h2, h4");
 // click - changes first signup button to green on click
 
 signupBtn1.addEventListener('click', event => {signupBtn1.style.backgroundColor = "green";
@@ -23,6 +24,7 @@ signupBtn1.style.color = "white";});
 
 signupBtn3.addEventListener('dblclick', event => {
     alert("Sign up for an island getaway now!");
+    event.stopPropagation();
 });
 
 // mouseover - turns second signup button purple on mouseover
@@ -66,14 +68,23 @@ logoHeading.addEventListener('mouseleave', event => {
 // mousemove -- goat picture pops up on fun bus image
 
 funBusPic.addEventListener('mousemove', event => {
-funBusPic.setAttribute("src", "img/goat-in-sweater.jpg")});
+funBusPic.setAttribute("src", "img/goat-in-sweater.jpg")
+event.stopPropagation();
+});
+
+
 
 
 // mousedown -- when mousedown, changes to baby goat pic
 
 boatPic.addEventListener('mousedown', event => {
     boatPic.setAttribute("src", "img/babygoat.jpg")
-});
+}); 
+
+
+adventurePic.addEventListener('mousedown', event => {
+    adventurePic.setAttribute("src", "img/chillgoat.jpg")
+}); 
 
 
 // contextmenu -- when right click, image changes to goat
@@ -81,3 +92,24 @@ boatPic.addEventListener('mousedown', event => {
 funPic.addEventListener('contextmenu', event => {
     funPic.setAttribute("src", "img/goathead.jpg")
 });
+
+
+
+paragraphs.forEach( element => 
+    element.addEventListener('mouseenter', event => {
+        element.innerHTML = "GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS BAAAAAA GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS GOATS KIDS AND GOATS AND KIDS AND GOATS AND KIDS AND BAAAAA GOATS. GOATS. GOT GOATS?"
+    })); 
+
+
+navBar.forEach( element => {
+    element.addEventListener('click', event => 
+    element.innerHTML = "GOAT"); 
+}) 
+
+
+headings.forEach( element => element.addEventListener('mouseover', event => {
+    element.innerHTML = "Welcome to the Goat Parade!";
+}
+
+) 
+);
