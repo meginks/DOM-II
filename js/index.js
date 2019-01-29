@@ -13,7 +13,7 @@ let logoHeading = document.querySelector(".logo-heading");
 let adventurePic = document.getElementById("adventure-img");
 let funPic = document.getElementById("fun-img");
 let navBar = document.querySelectorAll(".nav-link");
-let headings = document.querySelectorAll("h2, h4");
+let headings = document.querySelectorAll("home h2, h4");
 let headerBar = document.querySelector(".main-navigation");
 // click - changes first signup button to green on click
 
@@ -129,4 +129,27 @@ headings.forEach( element => element.addEventListener('mouseleave', event => {
 headerBar.addEventListener('click', event => {
     event.target.style.backgroundColor = "lightgray";
     event.stopPropagation();
-});
+}); 
+
+
+/// STRETCH 
+
+
+// makes goat in sweater photo smaller 
+funBusPic.addEventListener('click', event => {
+    TweenMax.to(event.currentTarget, 1, {
+        width:500,
+        ease:Bounce.easeOut})  
+}); 
+
+// changes heading text purple on click
+
+headings.forEach(element => element.addEventListener('click', event => {
+    TweenMax.to(event.target, 1, {color:"purple", yoyo:true, repeat:60}); 
+    event.stopPropagation();
+    
+}))
+
+paragraphs.forEach( element => element.addEventListener('click', event => {
+    event.stopPropagation();
+}))
