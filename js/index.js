@@ -67,6 +67,9 @@ logoHeading.addEventListener('mouseleave', event => {
     event.stopPropagation();
 });
 
+logoHeading.addEventListener('click', event => { 
+event.stopPropagation()});
+
 // mousemove -- goat picture pops up on fun bus image
 
 funBusPic.addEventListener('mousemove', event => {
